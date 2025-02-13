@@ -26,12 +26,12 @@ compilers:
     environment: {}
     extra_rpaths: []
 - compiler:
-    spec: cce@=17.0.1
+    spec: cce@=18.0.0
     paths:
-      cc: /opt/cray/pe/cce/17.0.1/bin/craycc
-      cxx: /opt/cray/pe/cce/17.0.1/bin/craycxx
-      f77: /opt/cray/pe/cce/17.0.1/bin/crayftn
-      fc: /opt/cray/pe/cce/17.0.1/bin/crayftn
+      cc: /opt/cray/pe/cce/18.0.0/bin/craycc
+      cxx: /opt/cray/pe/cce/18.0.0/bin/craycxx
+      f77: /opt/cray/pe/cce/18.0.0/bin/crayftn
+      fc: /opt/cray/pe/cce/18.0.0/bin/crayftn
     flags: {}
     operating_system: sles15
     target: aarch64
