@@ -3,7 +3,7 @@ compilers:
     spec: gcc@=12.3.0
     paths:
       cc: /usr/bin/gcc-12
-      cxx: /usr/bin/gcc-12
+      cxx: /usr/bin/g++-12
       f77: /usr/bin/gfortran-12
       fc: /usr/bin/gfortran-12
     flags: {}
@@ -16,7 +16,7 @@ compilers:
     spec: gcc@=13.2.0
     paths:
       cc: /usr/bin/gcc-13
-      cxx: /usr/bin/gcc-13
+      cxx: /usr/bin/g++-13
       f77: /usr/bin/gfortran-13
       fc: /usr/bin/gfortran-13
     flags: {}
