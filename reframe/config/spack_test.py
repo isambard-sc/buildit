@@ -6,6 +6,7 @@ from spack_base import SpackCompileOnlyBase
 class BZip2SpackBuild(SpackCompileOnlyBase):
     executable = 'bzip2'
     spackspec = 'bzip2@1.0.6'
+    needsmpi = False
 
 @rfm.simple_test
 class BZip2SpackCheck(rfm.RegressionTest):
@@ -13,12 +14,12 @@ class BZip2SpackCheck(rfm.RegressionTest):
     build_system = 'Spack'
     valid_systems = ['*']
     valid_prog_environs = ['*']
-    executable = 'bzip2'
     executable_opts = ['--help']
     bzip2_binary = fixture(BZip2SpackBuild, scope='environment')
 
     @run_after('setup')
     def set_environment(self):
+        self.executable               = self.bzip2_binary.executable
         self.build_system.environment = os.path.join(self.bzip2_binary.stagedir, 'rfm_spack_env')
         self.build_system.specs       = self.bzip2_binary.build_system.specs
 
