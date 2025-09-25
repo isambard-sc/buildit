@@ -6,9 +6,10 @@ class SpackCompileOnlyBase(rfm.CompileOnlyRegressionTest):
     build_system = 'Spack'
     sourcefile = None
     defspec = variable(str)
-    defdeps = variable(str, value="")
+    defdeps = parameter([''])
     mpidep  = variable(str, value="")
     needsmpi  = variable(bool, value=True)
+    spacktest = variable(bool, value=False)
     env_spackspec = {}
     extra_resources = {
         'memory': {'size': '0'}
@@ -74,4 +75,6 @@ class SpackCompileOnlyBase(rfm.CompileOnlyRegressionTest):
                                              f'spack -e rfm_spack_env concretize -f']
         if mynvlocalrc:
             self.build_system.preinstall_cmds.append(f'export NVLOCALRC={mynvlocalrc}')
+        if self.spacktest:
+            self.build_system.install_opts = ['--test=root']
 
